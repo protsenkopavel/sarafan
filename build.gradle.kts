@@ -24,6 +24,9 @@ dependencies {
 	runtimeOnly("org.postgresql:postgresql")
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
+
+	implementation ("org.springframework.boot:spring-boot-starter-security:2.6.7")
+	implementation ("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.5.5")
 }
 
 tasks.withType<Test> {
