@@ -4,6 +4,8 @@
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {
+    "@stomp/stompjs": "^7.0.0",
+    "sockjs-client": "^1.6.1",
     "vue": "^3.4.5",
     "vue-resource": "^1.5.3"
   },

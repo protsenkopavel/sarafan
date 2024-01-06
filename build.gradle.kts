@@ -30,6 +30,7 @@ dependencies {
 
 	implementation("org.springframework.session:spring-session-jdbc")
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+	implementation("org.springframework.boot:spring-boot-starter-websocket")
 }
 
 tasks.withType<Test> {
