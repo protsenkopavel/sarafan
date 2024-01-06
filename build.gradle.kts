@@ -27,6 +27,9 @@ dependencies {
 
 	implementation ("org.springframework.boot:spring-boot-starter-security:2.6.7")
 	implementation ("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.5.5")
+
+	implementation("org.springframework.session:spring-session-jdbc")
+	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 }
 
 tasks.withType<Test> {
