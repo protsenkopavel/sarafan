@@ -1,8 +1,15 @@
 package ru.example.sarafan.domain;
 
 public final class Views {
-    public interface Id {}
-    public interface IdName extends Id {}
+    public interface Id {
+    }
 
-    public interface FullMessage extends IdName {}
+    public interface IdName extends Id {
+    }
+
+    public interface FullComment extends IdName {
+    }
+
+    public interface FullMessage extends IdName {
+    }
 }
