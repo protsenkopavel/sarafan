@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.example.sarafan.domain.User;
 import ru.example.sarafan.domain.UserSubscription;
 import ru.example.sarafan.repo.UserDetailsRepo;
+import ru.example.sarafan.repo.UserSubscriptionRepo;
 
 import java.util.List;
 import java.util.Set;
@@ -13,10 +14,15 @@ import java.util.stream.Collectors;
 @Service
 public class ProfileService {
     private final UserDetailsRepo userDetailsRepo;
+    private final UserSubscriptionRepo userSubscriptionRepo;
 
     @Autowired
-    public ProfileService(UserDetailsRepo userDetailsRepo) {
+    public ProfileService(
+            UserDetailsRepo userDetailsRepo,
+            UserSubscriptionRepo userSubscriptionRepo
+    ) {
         this.userDetailsRepo = userDetailsRepo;
+        this.userSubscriptionRepo = userSubscriptionRepo;
     }
 
     public User changeSubscription(User channel, User subscriber) {
@@ -35,5 +41,16 @@ public class ProfileService {
         }
 
         return userDetailsRepo.save(channel);
+    }
+
+    public List<UserSubscription> getSubscribers(User channel) {
+        return userSubscriptionRepo.findByChannel(channel);
+    }
+
+    public UserSubscription changeSubscriptionStatus(User channel, User subscriber) {
+        UserSubscription subscription = userSubscriptionRepo.findByChannelAndSubscriber(channel, subscriber);
+        subscription.setActive(!subscription.isActive());
+
+        return userSubscriptionRepo.save(subscription);
     }
 }
