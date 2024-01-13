@@ -27,6 +27,10 @@ yarn_install.dependsOn(yarn_cache_clean)
 buildFront.dependsOn(yarn_install)
 processResources.dependsOn(buildFront)
 
+node {
+	download = true
+}
+
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
