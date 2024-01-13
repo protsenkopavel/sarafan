@@ -31,6 +31,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-websocket")
 	implementation("org.jsoup:jsoup:1.11.3")
+	implementation("io.sentry:sentry-spring:1.7.16")
 }
 
 tasks.withType<Test> {
