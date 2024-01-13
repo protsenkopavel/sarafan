@@ -15,6 +15,18 @@ repositories {
 	mavenCentral()
 }
 
+plugins {
+	id "com.moowork.node" version "1.3.1"
+}
+
+task buildFront(type: YarnTask) {
+	args = ['build']
+}
+
+yarn_install.dependsOn(yarn_cache_clean)
+buildFront.dependsOn(yarn_install)
+processResources.dependsOn(buildFront)
+
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")

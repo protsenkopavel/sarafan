@@ -2,18 +2,23 @@
   "name": "sarafan",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
+  "main": "webpack.common.js",
+  "start": "webpack-dev-server --config webpack.dev.js",
+  "build": "webpack --config webpack.prod.js",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@sentry/browser": "5.1.1",
     "@sentry/integrations": "^7.93.0",
     "@stomp/stompjs": "^7.0.0",
+    "clean-webpack-plugin": "^4.0.0",
     "sockjs-client": "^1.6.1",
     "vue": "^3.4.5",
     "vue-resource": "^1.5.3",
     "vue-router": "^3.0.2",
     "vuetify": "^3.4.9",
-    "vuex": "^4.1.0"
+    "vuex": "^4.1.0",
+    "webpack-dev-server": "^3.1.7",
+    "webpack-merge": "^5.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
